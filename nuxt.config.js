@@ -16,9 +16,6 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
-
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
@@ -36,15 +33,21 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    'nuxt-i18n',
-  ],
+  modules: ['nuxt-i18n'],
   i18n: {
-    locales: [{code: 'en', file: 'en.js'},{code: 'nl',file: 'nl.js'}],
+    locales: [
+      { code: 'en', file: 'en.js', name: 'EN' },
+      { code: 'nl', file: 'nl.js', name: 'NL' },
+    ],
+    lazy: true,
     defaultLocale: 'en',
-    langDir: 'locales'
+    langDir: 'locales/',
   },
-  
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  router: {
+    linkExactActiveClass: 'text-yellow-700',
+  },
 }
